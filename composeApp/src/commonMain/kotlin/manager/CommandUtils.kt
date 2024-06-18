@@ -32,6 +32,7 @@ fun getDevices(): List<DeviceVO> {
 fun execKeyEvent(key: Int, deviceName: String = DataManager.currentDevice?.deviceName ?: "") {
     "adb -s $deviceName shell input keyevent $key".apply {
         Logger.getLogger(TAG).info("execKeyEvent, shell: $this")
+        DataManager.addOutString(this)
     }.executeWithBack()
 }
 

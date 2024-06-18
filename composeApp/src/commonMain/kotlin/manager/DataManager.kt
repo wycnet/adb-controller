@@ -12,21 +12,29 @@ object DataManager {
     val outStrings = LinkedList<String>()
     val LIST_MAX_SIZE = 100
 
-    fun chooseDevice(device: DeviceVO) {
-        devicesUI.forEach {
-            if (it == device) {
-                it.selected = true
-                currentDevice = it
-            } else {
-                it.selected = false
-            }
-        }
+    fun chooseDevice(device: DeviceVO): List<DeviceVO> {
+        currentDevice = device
+        return updateDevices()
     }
 
     fun updateDevices(): List<DeviceVO> {
         devicesUI.clear()
-        devicesUI.addAll(getDevices())
-        return  devicesUI.toList()
+        devicesUI.addAll(getDevices().map {
+            if (it.deviceName == currentDevice?.deviceName) {
+                it.selected = true
+            } else {
+                it.selected = false
+            }
+            it
+        }.apply {
+            if (currentDevice == null) {
+                this.getOrNull(0)?.apply {
+                    selected = true
+                    currentDevice = this
+                }
+            }
+        })
+        return devicesUI.toList()
     }
 
     fun addOutString(line: String) {
