@@ -2,7 +2,7 @@
  * @Author: wangyincan wangyincan@corp.netease.com
  * @Date: 2024-04-02 16:23:44
  * @LastEditors: wangyincan wangyincan@corp.netease.com
- * @LastEditTime: 2024-07-03 17:19:40
+ * @LastEditTime: 2024-07-03 17:25:09
  * @FilePath: /adb-controller/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -10,8 +10,7 @@
 参考：
 
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
-
+[Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)
 
 [compose](https://developer.android.com/develop/ui/compose/lifecycle?hl=zh-cn)
 
